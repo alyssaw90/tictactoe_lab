@@ -20,14 +20,14 @@ window.onload = function () {
             if (event.innerHTML === ""){ 
                 if (counter % 2 === 0) {
                     event.style.color = "blue";
-                    event.style.fontFamily = "Impact,Charcoal,sans-serif";
+                    event.style.fontFamily = "sans-serif";
                     event.innerHTML = "O";          
                     turn.innerHTML = "It is X's Move";
                     turn.style.fontSize="25px";     
                     counter ++;
                 } else {
                     event.style.color = "red";
-                    event.style.fontFamily = "Impact,Charcoal,sans-serif";
+                    event.style.fontFamily = "sans-serif";
                     event.innerHTML = "X";  
                     turn.innerHTML = "It is O's Move";
                     turn.style.fontSize="25px";
