@@ -1,65 +1,34 @@
-/*Box width,height,and border*/
-#box1 {
-	height: 100px;
-	width: 100px;
-	border-right: 2px solid black;
-}
-#box2 {
-	height: 100px;
-	width: 100px;
-	
-}
-#box3 {
-	height: 100px;
-	width: 100px;
-	border-left: 2px solid black;
-}
-#box4 {
-	height: 100px;
-	width: 100px;
-	border-right: 2px solid black;
-	border-top: 2px solid black;
-}
-#box5 {
-	height: 100px;
-	width: 100px;
-	border-top: 2px solid black;
-}
-#box6 {
-	height: 100px;
-	width: 100px;
-	border-left: 2px solid black;
-	border-top: 2px solid black;
-}
-#box7 {
-	height: 100px;
-	width: 100px;
-	border-right: 2px solid black;
-	border-top: 2px solid black;
-}
-#box8 {
-	height: 100px;
-	width: 100px;
-	border-top: 2px solid black;
-}
-#box9 {
-	height: 100px;
-	width: 100px;
-	border-left: 2px solid black;
-	border-top: 2px solid black;
+table {
+    margin-right: auto;
+    margin-left: auto;
 }
 
-
-
-/* centered columns styles */
-.row-centered {
-	text-align:center;
+#board {
+	margin: 40px
 }
-.col-centered {
-	display:inline-block;
-	float:none;
-	/* reset the text-align */
 
-	/* inline-block space fix */
-	/*margin-right:-4px;*/
+.square {
+	width: 100px;
+	height: 100px;
+	margin: 20px;
+	text-align: center;
+}
+
+.vertical {
+	border-left: 3px solid black;
+	border-right: 3px solid black;
+}
+
+.horizontal {
+	border-top: 3px solid black;
+	border-bottom: 3px solid black;
+}
+
+#row {
+	font-size: 60px;
+}
+
+.button {
+	margin: 0 auto;
+	text-align: center;
 }

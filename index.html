@@ -13,39 +13,41 @@
 		<h1>Tic Tac Toe <small>3 in a row</small></h1>
 	</div>
 	<div class="container text-center">
-		<div class="row row-centered">
-			<div id="box1" class="col-xs-1 col-centered">
-				<h1>Test</h1>
-			</div>
-			<div id="box2" class="col-xs-1 col-centered">
-				<h1>Test</h1>
-			</div>
-			<div id="box3" class="col-xs-1 col-centered">
-				<h1>Test</h1>
-			</div>
+		<div class="checkbox">
+			<label>
+				<input type="checkbox" id="check"> Play Against Ai?
+			</label>
 		</div>
-		<div class="row row-centered">
-			<div id="box4" class="col-xs-1 col-centered">
-				<h1>Test</h1>
+
+		<div id="board">
+			<table>
+				<tr id="row">
+					<td class="square" id="s1"></td>
+					<td class="square vertical" id="s2"></td>
+					<td class="square" id="s3"></td>
+				</tr>
+				<tr id="row">
+					<td class="square horizontal" id="s4"></td>
+					<td class="square vertical horizontal" id="s5"></td>
+					<td class="square horizontal" id="s6"></td>
+				</tr>
+				<tr id="row">
+					<td class="square" id="s7"></td>
+					<td class="square vertical" id="s8"></td>
+					<td class="square" id="s9"></td>
+				</tr>
+			</table>
+			<div id="turn">
+				X's move
 			</div>
-			<div id="box5" class="col-xs-1 col-centered">
-				<h1>Test</h1>
+
+			<div>
+				<button id="end" type="button" class="btn btn-primary">Let's play again!</button>
 			</div>
-			<div id="box6" class="col-xs-1 col-centered">
-				<h1>Test</h1>
-			</div>
+
 		</div>
-		<div class="row row-centered">
-			<div id="box7" class="col-xs-1 col-centered">
-				<h1>Test</h1>
-			</div>
-			<div id="box8" class="col-xs-1 col-centered">
-				<h1>Test</h1>
-			</div>
-			<div id="box9" class="col-xs-1 col-centered">
-				<h1>Test</h1>
-			</div>
-		</div>
+		<div class="X"></div>
+		<div class="O"></div>
 	</div>
 </body>
 </html>
