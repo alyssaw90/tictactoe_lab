@@ -32,3 +32,12 @@ table {
 	margin: 0 auto;
 	text-align: center;
 }
+
+#end {
+	font: sans-serif;
+	background-color: red;
+}
+
+#turn {
+	font: 25px sans-serif;
+}
