@@ -1,6 +1,14 @@
+body {
+	background-color: green;
+}
+
 table {
     margin-right: auto;
     margin-left: auto;
+}
+
+h1 {
+	color: black;
 }
 
 #board {
@@ -35,9 +43,10 @@ table {
 
 #end {
 	font: sans-serif;
-	background-color: red;
+	background-color: purple;
 }
 
 #turn {
 	font: 25px sans-serif;
+	color: black;
 }
