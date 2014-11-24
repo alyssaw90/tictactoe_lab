@@ -1,47 +1,36 @@
-document.addEventListener('DOMContentLoaded', function(){  
+window.onload = function () {
 
-	//Click counter
-	var counter = 1;
-	//Declaring the square
-	var square = document.getElementsByClassName("square");
-	//Start new game function
-	var clear = document.getElementById("end");
-	//Displays who turn it is
-	var turn = document.getElementById("turn")
-	//Winning combinations array and storing user combinations
-	var winningCombinations = [["s1","s2","s3"],["s4","s5","s6"],["s7","s8","s9"],["s1","s4","s7"]["s2","s5","s8"],["s3","s6","s9"],["s1","s5","s9"],["s3","s5","s7"]];
-	var lastMove = [];
-  	var xArray = [];
-  	var oArray = [];
-  	var computerPlay = false;
+    //Click counter
+    var counter = 1;
+    //Declearing Square
+    var square = document.getElementsByClassName("square");
+    //Declearing Clear
+    var clear = document.getElementById("end");
+    //For displaying whos turn it is
+    var turn = document.getElementById("turn");
+    //Storing user's combinations
+    var userCombinations = [];
+    //The winning combinations
+    var winningCombinations = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
 
-//Computer playing
-	document.querySelector('#check').addEventListener('click', function() {
-		if (this.checked === true){
-			computerPlay = true;
-		} else {
-			computerPlay = false;
-		}
-	})
 
-//Clicking the squares  
+    //Clicking the squares  
     var clickSquare = function(event) {
         event.onclick = function () {
             if (event.innerHTML === ""){ 
                 if (counter % 2 === 0) {
                     event.style.color = "blue";
-                    event.style.fontFamily = "sans-serif";
-                    event.innerHTML = "O";
-                    turn.innerHTML = "X's Move";              
+                    event.style.fontFamily = "Impact,Charcoal,sans-serif";
+                    event.innerHTML = "O";          
+                    turn.innerHTML = "It is X's Move";
+                    turn.style.fontSize="25px";     
                     counter ++;
-                if (aiPlay === true) {
-            	aiMove(0);
-            	turn++;
                 } else {
                     event.style.color = "red";
-                    event.style.fontFamily = "sans-serif";
-                    event.innerHTML = "X";
-                    turn.innerHTML = "O's Move"  
+                    event.style.fontFamily = "Impact,Charcoal,sans-serif";
+                    event.innerHTML = "X";  
+                    turn.innerHTML = "It is O's Move";
+                    turn.style.fontSize="25px";
                     counter ++;
                 }
             } else {
@@ -49,62 +38,10 @@ document.addEventListener('DOMContentLoaded', function(){
             }
         }
     }
+
     for(var i=0; i<9; i++) {
         clickSquare(square[i]);
-    } 
-}
-
-var computerPlay = function(temp) {
-	for (var j = 0; j < 8 && temp == 0; j++) {
-		win1 = document.querySelector(winningCombinations[j][0]);
-		win2 = document.querySelector(winningCombinations[j][1]);
-		win3 = document.querySelector(winningCombinations[j][2]);
-		if (win1.classList.contains('O') && win2.classList.contains('O') && !win3.classList.contains('X')) {
-			win3.classList.add('O');
-			document.querySelector('.turn').innerHTML = "X's Move";
-			temp = 1;
-		} else if (win1.classList.contains('O') && win3.classList.contains('O') && !win2.classList.contains('X')) {
-			document.querySelector('.turn').innerHTML = "X's Move";
-			temp = 1;
-		} else if (win2.classList.contains('O') && win3. classList.contains('O') && !win1.classList.contains('X')) {
-			document.querySelector('.turn').innerHTML = "X's Move";
-			temp = 1;
-		} else if (win1.classList.contains('X') && win2.classList.contains('X') && !win3.classList.contains('O')){
-			win3.classList.add('O');
-			temp = 1;
-		} else if (win1.classList.contains('X') && win3.classList.contains('X') && !win2.classList.contains('O')) {
-			win2.classList.add('O');
-			temp = 1;
-		} else if (win2.classList.contains('X') && win3.classList.contains('X') && !win1.classList.contains('O')) {
-			win1.classList.add('O');
-			document.querySelector('.turn').innerHTML = "X's Move";
-			temp = 1;
-		}
-	}
-	for (var k = 0; k < square.length && temp == 0; k++) {
-		if (square[k].classList.contains('X') == false && square[k].classList.contains('O') == false && temp ==0) {
-			square[k].classList.add('O');
-			document.querySelector('.turn').innerHTML = "X's Move";
-			temp = 1;
-		}
-	}
-}
-
-document.addEventListener('click', function() {
-	for (var j = 0; j < 8; j++) {
-		win1 = document.querySelector(winningCombinations [j] [0]);
-		win2 = document.querySelector(winningCombinations [j] [1]);
-		win3 = document.querySelector(winningCombinations [j] [2]);
-		if ((win1.classList.contains('X')) && (win2.classList.contains('X')) && (win3.classList.contains('X'))) {
-			alert('X wins!');
-			reset();
-		} else if ((win1.classList.contains('O')) && (win2.classList.contains('O')) && (win3.classList.contains('O'))) {
-			alert('O wins!');
-			reset();
-		}
-	}
-})
-
+    }   
 
 
     //Doing a loop in the Clear function
@@ -113,10 +50,7 @@ document.addEventListener('click', function() {
             square[i].innerHTML = "" ;
             turn.innerHTML = "X's Move";
             counter = 1;
+            console.log("counter:",counter)
         }
-    }
-})
-
-
-
-
+    }	
+}
