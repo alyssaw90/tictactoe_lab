@@ -20,24 +20,26 @@ $(function(){
 	}
 
 	//Clicking the squares
-	$( ".square" ).click(function() {
+	$( ".square" ).on('click', function() {
   		// alert("You pressed the square");
-  		
+  		// console.log("hey");
+  			if ($(this).text() == "") {
+  				// console.log("hey");
     			if (counter % 2 === 0) {
-    				$(this).fadeIn( "slow" );
-    				$(this).css("color", "puruple").css("fontFamily", "sans-serif").css("fontSize", "25px");
+    				$(this).css("color", "#3498db").css("fontFamily", "sans-serif").css("fontSize", "25px");
     				$(this).text("O");          
     				turn.innerHTML = "X's Move";
     				counter ++;
     				winner();
     			} else {
-    				$(this).fadeIn( "slow" );
-    				$(this).css("color", "puruple").css("fontFamily", "sans-serif").css("fontSize", "25px");
+    				$(this).css("color", "#3498db").css("fontFamily", "sans-serif").css("fontSize", "25px");
     				$(this).text("X");
     				turn.innerHTML = "O's Move";
     				counter ++;
     				winner();
     			} 
+    		}
+
 	    })
 
 	//Reset button
