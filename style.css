@@ -44,6 +44,7 @@ h1 {
 #end {
 	font: sans-serif;
 	background-color: purple;
+	border-color: black;
 }
 
 #turn {
